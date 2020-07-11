@@ -5,32 +5,16 @@
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <!-- Post -->
             <div class="card-body">
-                <a href="<?php the_permalink(); ?>">
                     <h2><?php the_title(); ?></h2>
-                </a>
                 <p class="small mb-0"><?php the_time( get_option( 'date_format' ) ); ?></p>
                 <p class="small mb-0"><?php the_author(); ?></p>
                 <p class="small">Categories: <?php the_category(' / ')?> Tags: <?php the_tags('', ' / ', '')?></p>
 
                 <img src="img/1200.png" alt="" class="img-fluid mb-3">
-                <?php the_excerpt(); ?>
-                <a href="<?php the_permalink(); ?>" class="btn btn-primary">More info</a>
+                <?php the_content(); ?>
             </div>
             <!-- Post -->
         <?php endwhile; endif; ?>
-        <!-- Pagination -->
-        <div class="card-body">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                </ul>
-            </nav>
-        </div>
-        <!-- /Pagination -->
 
     </div>
     <!-- /Posts -->
