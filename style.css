@@ -1,6 +1,6 @@
 /*
 Theme Name: Software Developer Theme
-Text Domain: ptwpsoftdev
+Text Domain: ptwpsoftdevtheme
 Version: 1.0
 Requires at least: 4.7
 Requires PHP: 5.2.4
@@ -27,3 +27,16 @@ with others.
 body {
     background: white !important;
 }
+
+/* calendar widget */
+.widget_calendar {float: left;width: 100%;}
+#wp-calendar {width: 100%; }
+#wp-calendar caption { text-align: right; color: #333; font-size: 12px; margin-top: 10px; margin-bottom: 15px; }
+#wp-calendar thead { font-size: 10px; }
+#wp-calendar thead th { padding-bottom: 10px; padding-left: 14px; padding-top:5px; background: #9fa8f5; color: white}
+#wp-calendar tbody { color: #aaa; }
+#wp-calendar tbody td { background: #f5f5f5; border: 1px solid #fff; text-align: center; padding:8px;}
+#wp-calendar tbody td:hover { background: #fff; }
+#wp-calendar tbody .pad { background: none; }
+#wp-calendar tfoot #next { font-size: 10px; text-transform: uppercase; text-align: right; }
+#wp-calendar tfoot #prev { font-size: 10px; text-transform: uppercase; padding-top: 10px; }

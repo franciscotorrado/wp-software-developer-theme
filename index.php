@@ -35,13 +35,7 @@
     <!-- /Posts -->
 
     <!-- Side Menu -->
-    <div class="col-lg-3">
-        <div class="card-body">
-            <h4>Advertisement</h4>
-            <hr>
-            <img src="img/sideimage.jpg" alt="" class="img-fluid">
-        </div>
-    </div>
+	<?php get_sidebar(); ?>
     <!-- /Side Menu -->
 </div>
 </div>

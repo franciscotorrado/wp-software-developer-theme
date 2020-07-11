@@ -1,6 +1,6 @@
 <?php
 
-function add_theme_css() {
+function ptwpsoftdevtheme_add_theme_css() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
@@ -16,10 +16,28 @@ function add_theme_css() {
 	}
 }
 
-add_action( 'wp_enqueue_scripts', 'add_theme_css' );
+add_action( 'wp_enqueue_scripts', 'ptwpsoftdevtheme_add_theme_css' );
 
-// Support featured images
+// Support for featured images
 if ( function_exists( 'add_theme_support' ) ) {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 1200, 150, true ); // default Featured Image dimensions (cropped)
 }
+
+// Support for sidebar
+function ptwpsoftdevtheme_sidebars() {
+	/* Register the 'primary' sidebar. */
+	register_sidebar(
+		array(
+			'id'            => 'right-sidebar',
+			'name'          => __( 'Right Sidebar' ),
+			'description'   => __( 'Sidebar to show context information.' ),
+			'before_widget' => '<div class="card-body">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4>',
+			'after_title'   => '</h4><hr>',
+		)
+	);
+	/* Repeat register_sidebar() code for additional sidebars. */
+}
+add_action( 'widgets_init', 'ptwpsoftdevtheme_sidebars' );
