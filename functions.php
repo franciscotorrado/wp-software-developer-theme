@@ -16,3 +16,9 @@ function add_theme_css() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_css' );
+
+// Support featured images
+if ( function_exists( 'add_theme_support' ) ) {
+    add_theme_support( 'post-thumbnails' );
+    set_post_thumbnail_size( 1200, 150, true ); // default Featured Image dimensions (cropped)
+}
