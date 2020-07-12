@@ -1,3 +1,4 @@
+// Search forms
 document.querySelectorAll('#searchform #s')
     .forEach(item => {
         item.className += ' form-control mb-2'
@@ -34,8 +35,7 @@ if (newComment
     && newComment.querySelector('.comment-form-email label')
     && newComment.querySelector('.comment-form-email input')
     && newComment.querySelector('.comment-form-url label')
-    && newComment.querySelector('.comment-form-url input')
-) {
+    && newComment.querySelector('.comment-form-url input')) {
 
     newComment.querySelector('.comment-form-author label').className = 'd-none'
     newComment.querySelector('.comment-form-author input').className = 'form-control'
@@ -48,7 +48,6 @@ if (newComment
     newComment.querySelector('.comment-form-url label').className = 'd-none'
     newComment.querySelector('.comment-form-url input').className = 'form-control'
     newComment.querySelector('.comment-form-url input').setAttribute('placeholder', 'Sitio web')
-
 }
 
 const editCommentButton = document.querySelectorAll('.comment-edit-link')
