@@ -20,15 +20,16 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Features</a>
-                <a class="nav-item nav-link" href="#">Pricing</a>
-                <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </div>
-        </div>
+		<?php wp_nav_menu( array(
+			'theme_location'  => 'header-menu',
+			'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
+			'container'       => 'div',
+			'container_class' => 'collapse navbar-collapse',
+			'container_id'    => 'navbarSupportedContent',
+			'menu_class'      => 'nav navbar-nav ml-auto',
+			'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+			'walker'          => new WP_Bootstrap_Navwalker(),
+		) ); ?>
     </div>
 </nav>
 

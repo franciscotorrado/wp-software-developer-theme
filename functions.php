@@ -1,5 +1,11 @@
 <?php
 
+// Register Custom Navigation Walker
+function register_navwalker(){
+	require_once get_template_directory() . '/template-parts/content-navigation-bar.php';
+}
+add_action( 'after_setup_theme', 'register_navwalker' );
+
 function ptwpsoftdevtheme_add_theme_css() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
