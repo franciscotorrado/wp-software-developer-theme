@@ -8,7 +8,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
-    <title>Hello, world!</title>
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

@@ -1,9 +1,10 @@
 <?php
 
 // Register Custom Navigation Walker
-function register_navwalker(){
+function register_navwalker() {
 	require_once get_template_directory() . '/template-parts/content-navigation-bar.php';
 }
+
 add_action( 'after_setup_theme', 'register_navwalker' );
 
 function ptwpsoftdevtheme_add_theme_css() {
@@ -25,11 +26,18 @@ function ptwpsoftdevtheme_add_theme_css() {
 
 add_action( 'wp_enqueue_scripts', 'ptwpsoftdevtheme_add_theme_css' );
 
-// Support for featured images
-if ( function_exists( 'add_theme_support' ) ) {
-	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 1200, 150, true ); // default Featured Image dimensions (cropped)
+// Setup theme
+function ptwpsoftdevtheme_setup() {
+	// Support for featured images
+	if ( function_exists( 'add_theme_support' ) ) {
+		add_theme_support( 'post-thumbnails' );
+		set_post_thumbnail_size( 1200, 150, true ); // default Featured Image dimensions (cropped)
+	}
+
+	add_theme_support( 'title-tag' );
 }
+
+add_action( 'after_setup_theme', 'ptwpsoftdevtheme_setup' );
 
 // Support for sidebar
 function ptwpsoftdevtheme_sidebars() {
