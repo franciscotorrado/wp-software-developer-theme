@@ -19,6 +19,9 @@
 				?>
                 <!-- /Featured Image -->
 				<?php the_content(); ?>
+				<?php if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif; ?>
             </div>
             <!-- Post -->
 		<?php endwhile; endif; ?>
