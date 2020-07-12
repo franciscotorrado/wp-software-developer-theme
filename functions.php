@@ -2,14 +2,15 @@
 
 function ptwpsoftdevtheme_add_theme_css() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
-
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
 
 	wp_enqueue_script( 'popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js',
 		array( 'jquery' ), '1.14.7', true );
+	wp_enqueue_script( 'bootstrap-js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js',
+		array( 'popper' ), '4.3.1', true );
 
-	wp_enqueue_script( 'bottstrap-js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js',
-		array( 'jquery' ), '4.3.1', true );
+	// Theme JS files
+	wp_enqueue_script( 'theme-js', get_template_directory_uri() . '/assets/js/index.js', array( 'bootstrap-js' ), '1.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -32,7 +33,7 @@ function ptwpsoftdevtheme_sidebars() {
 			'id'            => 'right-sidebar',
 			'name'          => __( 'Right Sidebar' ),
 			'description'   => __( 'Sidebar to show context information.' ),
-			'before_widget' => '<div class="card-body">',
+			'before_widget' => '<div class="card-body ptwpsoftdevtheme-widget">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h4>',
 			'after_title'   => '</h4><hr>',
@@ -40,4 +41,5 @@ function ptwpsoftdevtheme_sidebars() {
 	);
 	/* Repeat register_sidebar() code for additional sidebars. */
 }
+
 add_action( 'widgets_init', 'ptwpsoftdevtheme_sidebars' );
