@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html <?php language_attributes(); ?>>
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -11,11 +11,11 @@
     <title>Hello, world!</title>
 	<?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 <!-- Menu -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="#">Logo Corporativo</a>
+        <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">Logo Corporativo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
