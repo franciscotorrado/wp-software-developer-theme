@@ -31,7 +31,7 @@
         <div class="card-body">
             <h4>Advertisement</h4>
             <hr>
-            <img src="img/sideimage.jpg" alt="" class="img-fluid">
+            <img src="assets/images/sideimage.jpg" alt="" class="img-fluid">
         </div>
     </div>
     <!-- /Side Menu -->
