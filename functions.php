@@ -27,7 +27,6 @@ if ( function_exists( 'add_theme_support' ) ) {
 
 // Support for sidebar
 function ptwpsoftdevtheme_sidebars() {
-	/* Register the 'primary' sidebar. */
 	register_sidebar(
 		array(
 			'id'            => 'right-sidebar',
@@ -39,7 +38,17 @@ function ptwpsoftdevtheme_sidebars() {
 			'after_title'   => '</h4><hr>',
 		)
 	);
-	/* Repeat register_sidebar() code for additional sidebars. */
 }
 
 add_action( 'widgets_init', 'ptwpsoftdevtheme_sidebars' );
+
+// Support for menu
+function ptwpsoftdevtheme_menus() {
+	register_nav_menus(
+		array(
+			'header-menu' => __( 'Header Menu' )
+		)
+	);
+}
+
+add_action( 'init', 'ptwpsoftdevtheme_menus' );
