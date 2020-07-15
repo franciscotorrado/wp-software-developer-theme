@@ -12,7 +12,7 @@
 </head>
 <body <?php body_class(); ?>>
 <!-- Menu -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark colors-dark">
     <div class="container">
         <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">Logo Corporativo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -36,5 +36,3 @@
 
 <!-- Blog -->
 <div class="container">
-    <h2 class="my-5 text-center text-primary">Mi blog personal</h2>
-    <hr>

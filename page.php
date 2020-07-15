@@ -1,7 +1,9 @@
 <?php get_header(); ?>
+<?php get_template_part( 'template-parts/page/content', 'page-developer-header' ) ?>
 <div class="row">
 	<!-- Posts -->
 	<div class="col-lg-12">
+
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<!-- Post -->
 			<div class="card-body">
